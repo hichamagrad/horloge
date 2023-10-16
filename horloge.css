@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenaire{
+    min-height: 100vh;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.horloge{
+    height: 250px;
+    width: 250px;
+    background: url(clock.png) no-repeat;
+    background-size: cover;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px #ccc,
+                -3px -3px 5px #fff,
+                3px 3px 5px #ccc inset,
+                -3px -3px 5px #fff inset;
+    position: relative;
+}
+.horloge::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #f0f0f0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 3px 3px 5px #ccc,
+                -3px -3px 5px #fff,
+                3px 3px 5px #ccc inset,
+                -3px -3px 5px #fff inset;
+}
+.seconde{
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 4px;
+    background: #fb0101;
+    border-radius: 50px;
+    animation: second 60s steps(60) infinite;
+    transform-origin: bottom;
+    z-index: 1;
+}
+@keyframes second {
+    0%{
+        transform: translateX(-50%) rotateZ(0deg);
+    }
+    100%{
+        transform: translateX(-50%) rotateZ(360deg);
+    }
+}
+.minute{
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 5px;
+    background: #000000;
+    border-radius: 50px;
+    animation: minute 3600s steps(3600) infinite;
+    transform-origin: bottom;
+    z-index: 1;
+}
+@keyframes minute {
+    0%{
+        transform: translateX(-50%) rotateZ(0deg);
+    }
+    100%{
+        transform: translateX(-50%) rotateZ(360deg);
+    }
+}
+.heure{
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 6px;
+    background: #000000;
+    border-radius: 50px;
+    animation: hour 86400s steps(86400) infinite;
+    transform-origin: bottom;
+}
+@keyframes hour {
+    0%{
+        transform: translateX(-50%) rotateZ(0deg);
+    }
+    100%{
+        transform: translateX(-50%) rotateZ(360deg);
+    }
+}
+
+
